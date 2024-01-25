@@ -5,7 +5,6 @@ buildscript {
     }
     dependencies {
         classpath(libs.navigation.safe.args)
-        classpath(libs.kotlin.serialization)
     }
 }
 plugins {
@@ -15,5 +14,6 @@ plugins {
     alias(libs.plugins.kotlin.jvm) apply false
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.android.library) apply false
+    alias(libs.plugins.kotlin.plugin.serialization) apply false
 }
 true

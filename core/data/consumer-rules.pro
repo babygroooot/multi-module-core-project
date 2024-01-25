@@ -1,1 +1,1 @@
--keepclassmembers class com.core.data.** {*;}
+#-keepclassmembers class com.core.data.** {*;}

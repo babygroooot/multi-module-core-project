@@ -1,6 +1,6 @@
 plugins {
-    id("developmentway.android.library.core")
-    id("developmentway.android.hilt")
+    alias(libs.plugins.developmentway.android.library.core)
+    alias(libs.plugins.developmentway.android.hilt)
 }
 
 
@@ -12,7 +12,6 @@ dependencies {
 
     implementation (libs.datastore.preferences)
     implementation(libs.kotlinx.serialization.json)
-    implementation(libs.retrofit.converter)
 
     implementation(project(":core:model"))
 }

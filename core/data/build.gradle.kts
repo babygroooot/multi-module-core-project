@@ -1,6 +1,7 @@
 plugins {
-    id("developmentway.android.library.core")
-    id("developmentway.android.hilt")
+    alias(libs.plugins.developmentway.android.library.core)
+    alias(libs.plugins.developmentway.android.hilt)
+    alias(libs.plugins.kotlin.plugin.serialization)
 }
 
 
@@ -12,9 +13,9 @@ dependencies {
 
     //Network
     implementation(libs.retrofit.core)
-    implementation(libs.retrofit.converter)
     implementation(libs.okhttp.core)
     implementation(libs.okhttp.logger)
+    implementation(libs.kotlinx.serialization.json)
 
     implementation(project(":core:database"))
     implementation(project(":core:datastore"))

@@ -9,13 +9,14 @@ import okhttp3.Request
 import okhttp3.Response
 import okhttp3.Route
 import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Converter
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Inject
 
 class TokenAuthenticator @Inject constructor(
     private val dataStoreManager: DataStoreManager,
     private val loggingInterceptor: HttpLoggingInterceptor,
+    private val converterFactory: Converter.Factory,
 ) : Authenticator {
     override fun authenticate(route: Route?, response: Response): Request? {
         if (response.responseCount >= 3) {
@@ -43,7 +44,7 @@ class TokenAuthenticator @Inject constructor(
         }
         val retrofitBuilder = Retrofit.Builder()
             .baseUrl(BuildConfig.BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(converterFactory)
         retrofitBuilder.client(okHttpClient.build())
         val retrofit = retrofitBuilder.build()
         val service = retrofit.create(RefreshTokenService::class.java)

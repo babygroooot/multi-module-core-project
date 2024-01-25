@@ -1,7 +1,6 @@
 plugins {
-    id("developmentway.android.library.core")
-    id("developmentway.android.hilt")
-
+    alias(libs.plugins.developmentway.android.library.core)
+    alias(libs.plugins.developmentway.android.hilt)
 }
 
 android {

@@ -1,6 +1,6 @@
 [versions]
 #Hilt
-hilt = "2.48.1"
+hilt = "2.50"
 #Retrofit
 retrofit = "2.9.0"
 okhttp = "4.12.0"
@@ -21,12 +21,13 @@ junit4 = "4.13.2"
 junitExt = "1.1.5"
 espresso = "3.5.1"
 #Kotlin Serialization
-kotlinSerializationVersion = "1.9.10"
-kotlinxSerializationJsonVersion = "1.5.1"
+kotlinSerializationVersion = "1.9.22"
+kotlinxSerializationJsonVersion = "1.6.2"
+kotlinxSerializationConverter = "1.0.0"
 #Gradle Plugin
-androidGradlePlugin = "8.2.1"
-ksp = "1.9.10-1.0.13"
-kotlin = "1.9.10"
+androidGradlePlugin = "8.2.2"
+ksp = "1.9.21-1.0.16"
+kotlin = "1.9.22"
 #DataStore
 dataStore = "1.0.0"
 
@@ -37,7 +38,6 @@ hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref
 hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
 #Retrofit
 retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
-retrofit-converter = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
 okhttp-core = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
 okhttp-logger = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
 #Core
@@ -61,13 +61,14 @@ androidx-test-ext = { group = "androidx.test.ext", name = "junit", version.ref =
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso" }
 #Gradle Plugin
 navigation-safe-args = { group = "androidx.navigation", name = "navigation-safe-args-gradle-plugin", version.ref = "navigation" }
-kotlin-serialization = { group = "org.jetbrains.kotlin", name = "kotlin-serialization", version.ref = "kotlinSerializationVersion" }
-kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJsonVersion" }
 kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 android-tools-build-gradle = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
 ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
 #DataStore
 datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "dataStore" }
+#KotlinXSerialization
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJsonVersion" }
+kotlinx-serialization-converter = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "kotlinxSerializationConverter" }
 
 
 [plugins]
@@ -77,3 +78,12 @@ hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlinSerializationVersion" }
+
+#Plugin defined by this project
+developmentway-android-library-core = { id = "developmentway.android.library.core", version = "unspecified" }
+developmentway-android-hilt = { id = "developmentway.android.hilt", version = "unspecified" }
+developmentway-android-library-network = { id = "developmentway.android.library.network", version = "unspecified" }
+developmentway-android-library-common = { id = "developmentway.android.library.common", version = "unspecified" }
+developmentway-android-library-feature = { id = "developmentway.android.library.feature", version = "unspecified" }
+developmentway-android-application = { id = "developmentway.android.application", version = "unspecified" }

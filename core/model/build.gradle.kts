@@ -1,5 +1,5 @@
 plugins {
-    id("developmentway.android.library.core")
+    alias(libs.plugins.developmentway.android.library.core)
 }
 
 android {

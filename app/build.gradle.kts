@@ -1,5 +1,5 @@
 plugins {
-    id("developmentway.android.application")
+    alias(libs.plugins.developmentway.android.application)
 }
 
 android {

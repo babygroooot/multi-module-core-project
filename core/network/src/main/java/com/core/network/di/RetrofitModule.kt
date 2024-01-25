@@ -5,18 +5,19 @@ import com.core.datastore.DataStoreManager
 import com.core.network.BuildConfig
 import com.core.network.util.NetworkResultCallAdapterFactory
 import com.core.network.util.token_manager.TokenAuthenticator
-import com.google.gson.GsonBuilder
+import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import kotlinx.coroutines.runBlocking
+import kotlinx.serialization.json.Json
+import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.CallAdapter
 import retrofit2.Converter
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
@@ -66,7 +67,7 @@ class RetrofitModule {
 
     @Provides
     fun provideConverterFactory(): Converter.Factory {
-        return GsonConverterFactory.create(GsonBuilder().setLenient().create())
+        return Json.asConverterFactory("application/json".toMediaType())
     }
 
     @Provides
