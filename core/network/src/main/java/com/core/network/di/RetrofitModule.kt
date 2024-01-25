@@ -67,7 +67,11 @@ class RetrofitModule {
 
     @Provides
     fun provideConverterFactory(): Converter.Factory {
-        return Json.asConverterFactory("application/json".toMediaType())
+        val json = Json {
+            ignoreUnknownKeys = true
+            isLenient = true
+        }
+        return json.asConverterFactory("application/json".toMediaType())
     }
 
     @Provides
