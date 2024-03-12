@@ -21,7 +21,6 @@ dependencies {
     implementation(libs.kotlinx.serialization.converter)
     implementation(libs.kotlinx.serialization.json)
 
-    implementation (project(":core:model"))
-    implementation (project(":core:common"))
-    implementation (project(":core:datastore"))
+    implementation (projects.core.common)
+    implementation (projects.core.datastore)
 }

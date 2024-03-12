@@ -15,7 +15,7 @@ enum class FlavorDimension {
 }
 
 fun configureFlavors(
-    commonExtension: CommonExtension<*, *, *, *, *>,
+    commonExtension: CommonExtension<*, *, *, *, *, *>,
     flavorConfigurationBlock: ProductFlavor.(flavor: AppFlavor) -> Unit = {}
 ) {
     commonExtension.apply {

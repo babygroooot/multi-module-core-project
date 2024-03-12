@@ -59,6 +59,7 @@ class AndroidApplicationConventionPlugin: Plugin<Project> {
                 }
                 buildFeatures {
                     viewBinding = true
+                    buildConfig = true
                 }
                 dependencies {
                     add("implementation", project(":core:model"))

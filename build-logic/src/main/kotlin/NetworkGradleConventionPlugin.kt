@@ -32,6 +32,9 @@ class NetworkGradleConventionPlugin: Plugin<Project> {
                         proguardFiles (getDefaultProguardFile("proguard-android-optimize.txt"), "consumer-rules.pro")
                     }
                 }
+                buildFeatures {
+                    buildConfig = true
+                }
             }
         }
     }

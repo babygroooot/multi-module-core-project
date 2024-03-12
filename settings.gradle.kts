@@ -13,7 +13,8 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "developmentway"
+rootProject.name = "multi-module-core-project"
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include (":app")
 include (":core")
 include (":feature")

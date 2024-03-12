@@ -30,6 +30,7 @@ class CommonModuleGradleConventionPlugin: Plugin<Project> {
                 configureFlavors(this)
                 buildFeatures {
                     viewBinding = true
+                    buildConfig = true
                 }
                 dependencies {
                     add("implementation", libs.findLibrary("androidx.appcompat").get())

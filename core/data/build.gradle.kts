@@ -17,8 +17,8 @@ dependencies {
     implementation(libs.okhttp.logger)
     implementation(libs.kotlinx.serialization.json)
 
-    implementation(project(":core:database"))
-    implementation(project(":core:datastore"))
-    implementation(project(":core:network"))
-    implementation (project(":core:common"))
+    implementation(projects.core.database)
+    implementation(projects.core.datastore)
+    implementation(projects.core.network)
+    implementation (projects.core.common)
 }
