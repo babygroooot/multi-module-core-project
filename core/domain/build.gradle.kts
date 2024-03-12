@@ -14,7 +14,7 @@ dependencies {
     androidTestImplementation (libs.androidx.test.ext)
     androidTestImplementation (libs.espresso.core)
     
-    implementation (projects.core.domain)
+    implementation (projects.core.model)
     implementation (projects.core.data)
 
 }
