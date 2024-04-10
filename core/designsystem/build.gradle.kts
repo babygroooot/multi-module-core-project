@@ -14,4 +14,7 @@ dependencies {
     api(libs.androidx.compose.material3)
     api(libs.androidx.compose.runtime)
     api(libs.androidx.compose.ui.util)
+    testApi (libs.junit.test)
+    androidTestApi (libs.androidx.test.ext)
+    androidTestApi (libs.espresso.core)
 }
