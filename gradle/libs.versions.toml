@@ -26,13 +26,13 @@ kotlinSerializationVersion = "1.9.22"
 kotlinxSerializationJsonVersion = "1.6.3"
 kotlinxSerializationConverter = "1.0.0"
 #Gradle Plugin
-androidGradlePlugin = "8.3.0"
+androidGradlePlugin = "8.3.1"
 ksp = "1.9.22-1.0.18"
 kotlin = "1.9.22"
 #DataStore
 dataStore = "1.0.0"
 #Compose
-androidxComposeBom = "2024.02.02"
+androidxComposeBom = "2024.04.00"
 androidxHiltNavigationCompose = "1.2.0"
 androidxComposeCompiler = "1.5.8"
 
