@@ -5,7 +5,6 @@ import com.core.datastore.DataStoreManager
 import com.core.network.BuildConfig
 import com.core.network.util.NetworkResultCallAdapterFactory
 import com.core.network.util.token_manager.TokenAuthenticator
-import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -18,6 +17,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.CallAdapter
 import retrofit2.Converter
 import retrofit2.Retrofit
+import retrofit2.converter.kotlinx.serialization.asConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
@@ -57,8 +57,9 @@ class RetrofitModule {
             val request = chain.request()
             val token = runBlocking { dataStoreManager.getToken() }
             val builder = request.newBuilder()
-                .addHeader("Content-Type", "application/json")
-                .addHeader("Authorization", "Bearer $token")
+            if (token.isNullOrBlank().not()) {
+                builder.addHeader("Authorization", "Bearer $token")
+            }
             chain.proceed(builder.build())
         }
 
@@ -67,11 +68,12 @@ class RetrofitModule {
 
     @Provides
     fun provideConverterFactory(): Converter.Factory {
+        val contentType = "application/json; charset=UTF-8".toMediaType()
         val json = Json {
             ignoreUnknownKeys = true
             isLenient = true
         }
-        return json.asConverterFactory("application/json".toMediaType())
+        return json.asConverterFactory(contentType)
     }
 
     @Provides

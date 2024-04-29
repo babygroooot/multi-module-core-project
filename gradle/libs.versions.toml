@@ -2,15 +2,15 @@
 #Hilt
 hilt = "2.51"
 #Retrofit
-retrofit = "2.9.0"
+retrofit = "2.11.0"
 okhttp = "4.12.0"
 #Core
-ktx = "1.12.0"
+ktx = "1.13.0"
 androidxAppCompat = "1.6.1"
 materialVersion = "1.11.0"
 constraintLayoutVersion = "2.1.4"
 androidxFragment = "1.6.2"
-androidxActivity = "1.8.2"
+androidxActivity = "1.9.0"
 lifecycle = "2.7.0"
 androidxMetrics = "1.0.0-beta01"
 #Navigation Component
@@ -24,15 +24,15 @@ espresso = "3.5.1"
 #Kotlin Serialization
 kotlinSerializationVersion = "1.9.22"
 kotlinxSerializationJsonVersion = "1.6.3"
-kotlinxSerializationConverter = "1.0.0"
+kotlinxSerializationConverter = "2.11.0"
 #Gradle Plugin
-androidGradlePlugin = "8.3.1"
+androidGradlePlugin = "8.3.2"
 ksp = "1.9.22-1.0.18"
 kotlin = "1.9.22"
 #DataStore
-dataStore = "1.0.0"
+dataStore = "1.1.0"
 #Compose
-androidxComposeBom = "2024.04.00"
+androidxComposeBom = "2024.04.01"
 androidxHiltNavigationCompose = "1.2.0"
 androidxComposeCompiler = "1.5.8"
 
@@ -73,7 +73,7 @@ ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devto
 datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "dataStore" }
 #KotlinXSerialization
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJsonVersion" }
-kotlinx-serialization-converter = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "kotlinxSerializationConverter" }
+kotlinx-serialization-converter = { group = "com.squareup.retrofit2", name = "converter-kotlinx-serialization", version.ref = "kotlinxSerializationConverter" }
 #Compose
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidxActivity" }
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidxComposeBom" }
