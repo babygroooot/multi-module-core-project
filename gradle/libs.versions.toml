@@ -1,18 +1,19 @@
 [versions]
 #Hilt
-hilt = "2.51"
+hilt = "2.51.1"
 #Retrofit
 retrofit = "2.11.0"
 okhttp = "4.12.0"
 #Core
-ktx = "1.13.0"
-androidxAppCompat = "1.6.1"
-materialVersion = "1.11.0"
+ktx = "1.13.1"
+androidxAppCompat = "1.7.0"
+materialVersion = "1.12.0"
 constraintLayoutVersion = "2.1.4"
-androidxFragment = "1.6.2"
+androidxFragment = "1.7.1"
 androidxActivity = "1.9.0"
-lifecycle = "2.7.0"
+lifecycle = "2.8.1"
 androidxMetrics = "1.0.0-beta01"
+androidDesugarJdkLibs = "2.0.4"
 #Navigation Component
 navigation = "2.7.7"
 #Room Database
@@ -22,19 +23,19 @@ junit4 = "4.13.2"
 junitExt = "1.1.5"
 espresso = "3.5.1"
 #Kotlin Serialization
-kotlinSerializationVersion = "1.9.22"
-kotlinxSerializationJsonVersion = "1.6.3"
+kotlinSerializationVersion = "2.0.0"
+kotlinxSerializationJsonVersion = "1.7.0-RC"
 kotlinxSerializationConverter = "2.11.0"
 #Gradle Plugin
-androidGradlePlugin = "8.3.2"
-ksp = "1.9.22-1.0.18"
-kotlin = "1.9.22"
+androidGradlePlugin = "8.4.1"
+ksp = "2.0.0-1.0.21"
+kotlin = "2.0.0"
+androidTools = "31.4.1"
 #DataStore
-dataStore = "1.1.0"
+dataStore = "1.1.1"
 #Compose
-androidxComposeBom = "2024.04.01"
+androidxComposeBom = "2024.05.00"
 androidxHiltNavigationCompose = "1.2.0"
-androidxComposeCompiler = "1.5.8"
 
 
 [libraries]
@@ -57,6 +58,7 @@ androidx-lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-r
 #Navigation Component
 androidx-navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigation" }
 androidx-navigation-ui = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation" }
+android-desugarJdkLibs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "androidDesugarJdkLibs" }
 #Room Database
 androidx-room = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
@@ -69,6 +71,8 @@ navigation-safe-args = { group = "androidx.navigation", name = "navigation-safe-
 kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 android-tools-build-gradle = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
 ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
+android-tools-common = { group = "com.android.tools", name = "common", version.ref = "androidTools" }
+compose-gradlePlugin = { module = "org.jetbrains.kotlin:compose-compiler-gradle-plugin", version.ref = "kotlin" }
 #DataStore
 datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "dataStore" }
 #KotlinXSerialization
@@ -100,6 +104,7 @@ ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlinSerializationVersion" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 
 #Plugin defined by this project
 developmentway-android-library-core = { id = "developmentway.android.library.core", version = "unspecified" }

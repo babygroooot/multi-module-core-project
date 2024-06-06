@@ -1,4 +1,4 @@
-package build_logic.util
+package com.madskill.mad_skill.util
 
 import org.gradle.api.Project
 import org.gradle.api.artifacts.VersionCatalog

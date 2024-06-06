@@ -1,10 +1,11 @@
-import build_logic.AppFlavor
-import build_logic.DefaultConfig
-import build_logic.FlavorConfig
-import build_logic.configureFlavors
-import build_logic.util.configureKotlinAndroid
-import build_logic.util.libs
+
 import com.android.build.api.dsl.ApplicationExtension
+import com.madskill.mad_skill.AppFlavor
+import com.madskill.mad_skill.DefaultConfig
+import com.madskill.mad_skill.FlavorConfig
+import com.madskill.mad_skill.configureFlavors
+import com.madskill.mad_skill.util.configureKotlinAndroid
+import com.madskill.mad_skill.util.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure

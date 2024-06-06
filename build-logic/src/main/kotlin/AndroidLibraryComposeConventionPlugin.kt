@@ -14,8 +14,8 @@
  *   limitations under the License.
  */
 
-import build_logic.util.configureAndroidCompose
-import build_logic.util.libs
+import com.madskill.mad_skill.util.configureAndroidCompose
+import com.madskill.mad_skill.util.libs
 import com.android.build.gradle.LibraryExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -27,6 +27,7 @@ class AndroidLibraryComposeConventionPlugin : Plugin<Project> {
     override fun apply(project: Project) {
         with(project) {
             pluginManager.apply("com.android.library")
+            pluginManager.apply("org.jetbrains.kotlin.plugin.compose")
 
             val extension = extensions.getByType<LibraryExtension>()
             configureAndroidCompose(extension)

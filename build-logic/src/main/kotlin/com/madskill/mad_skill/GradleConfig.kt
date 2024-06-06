@@ -1,4 +1,4 @@
-package build_logic
+package com.madskill.mad_skill
 
 object FlavorConfig{
     const val PROD_BASE_URL = "\"Your base URL for Production\""

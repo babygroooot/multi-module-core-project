@@ -1,4 +1,4 @@
-import build_logic.util.libs
+import com.madskill.mad_skill.util.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies

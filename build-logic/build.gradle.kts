@@ -1,14 +1,10 @@
-import org.gradle.kotlin.dsl.`kotlin-dsl`
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
-repositories {
-    google()
-    mavenCentral()
-}
 
 plugins {
     `kotlin-dsl`
 }
+
+group = "com.madskill.mad_skill.buildlogic"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_17
@@ -19,7 +15,6 @@ tasks.withType<KotlinCompile>().configureEach {
         jvmTarget = JavaVersion.VERSION_17.toString()
     }
 }
-
 tasks {
     validatePlugins {
         enableStricterValidation = true
@@ -30,6 +25,8 @@ tasks {
 dependencies {
     compileOnly(libs.android.tools.build.gradle)
     compileOnly(libs.kotlin.gradle.plugin)
+    compileOnly(libs.android.tools.common)
+    compileOnly(libs.compose.gradlePlugin)
 }
 
 gradlePlugin {

@@ -1,5 +1,5 @@
-import build_logic.configureFlavors
-import build_logic.util.configureKotlinAndroid
+import com.madskill.mad_skill.configureFlavors
+import com.madskill.mad_skill.util.configureKotlinAndroid
 import com.android.build.gradle.LibraryExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project

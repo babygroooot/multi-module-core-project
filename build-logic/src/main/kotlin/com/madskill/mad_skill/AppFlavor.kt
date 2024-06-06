@@ -1,4 +1,4 @@
-package build_logic
+package com.madskill.mad_skill
 
 import com.android.build.api.dsl.ApplicationExtension
 import com.android.build.api.dsl.ApplicationProductFlavor
@@ -21,7 +21,7 @@ fun configureFlavors(
     commonExtension.apply {
         flavorDimensions += FlavorDimension.Environment.name
         productFlavors {
-            AppFlavor.values().forEach {  flavor ->
+            AppFlavor.values().forEach { flavor ->
                 create(flavor.name) {
                     dimension = flavor.dimension.name
                     flavorConfigurationBlock(this, flavor)
