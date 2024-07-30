@@ -41,7 +41,6 @@ class AndroidApplicationConventionPlugin: Plugin<Project> {
                     debug {
                         isMinifyEnabled = false
                         isShrinkResources = false
-                        proguardFiles (getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
                     }
                 }
                 configureFlavors(this) {
@@ -61,6 +60,11 @@ class AndroidApplicationConventionPlugin: Plugin<Project> {
                 buildFeatures {
                     viewBinding = true
                     buildConfig = true
+                }
+                packaging {
+                    resources {
+                        excludes.add("/META-INF/{AL2.0,LGPL2.1}")
+                    }
                 }
                 dependencies {
                     add("implementation", project(":core:model"))

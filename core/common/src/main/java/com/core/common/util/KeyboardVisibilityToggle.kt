@@ -24,7 +24,7 @@ fun View.hideSoftKeyboard() {
         ViewCompat.getRootWindowInsets(rootView)?.isVisible(WindowInsetsCompat.Type.ime())
     if (keyboardIsVisible == true) {
         imm.hideSoftInputFromWindow(this.windowToken, 0)
-        if (this is EditText){
+        if (this is EditText) {
             this.clearFocus()
         }
     }
@@ -61,6 +61,7 @@ fun View.focusAndShowKeyboard() {
                         viewTreeObserver.removeOnWindowFocusChangeListener(this)
                     }
                 }
-            })
+            },
+        )
     }
 }

@@ -9,14 +9,13 @@ android {
 
 dependencies {
 
-
-    testImplementation (libs.junit.test)
-    androidTestImplementation (libs.androidx.test.ext)
-    androidTestImplementation (libs.espresso.core)
+    testImplementation(libs.junit.test)
+    androidTestImplementation(libs.androidx.test.ext)
+    androidTestImplementation(libs.espresso.core)
 
     //Room
-    implementation (libs.androidx.room)
-    ksp (libs.androidx.room.compiler)
+    implementation(libs.androidx.room)
+    ksp(libs.androidx.room.compiler)
 
     implementation(projects.core.model)
 }

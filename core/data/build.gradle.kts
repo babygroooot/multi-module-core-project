@@ -4,7 +4,6 @@ plugins {
     alias(libs.plugins.kotlin.plugin.serialization)
 }
 
-
 android {
     namespace = "com.core.data"
 }

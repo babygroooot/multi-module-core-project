@@ -8,23 +8,23 @@ import androidx.compose.ui.unit.sp
 val NavigationTitleTextStyle = TextStyle(
     color = Color.Black,
     fontSize = 16.sp,
-    fontWeight = FontWeight.Bold
+    fontWeight = FontWeight.Bold,
 )
 
 val TitleTextStyle = TextStyle(
     color = Color.Black,
     fontSize = 14.sp,
-    fontWeight = FontWeight.Medium
+    fontWeight = FontWeight.Medium,
 )
 
 val BodyTextStyle = TextStyle(
     color = Color.Black,
     fontSize = 14.sp,
-    fontWeight = FontWeight.Normal
+    fontWeight = FontWeight.Normal,
 )
 
 val LargeButtonTextStyle = TextStyle(
     color = Color.Black,
     fontSize = 14.sp,
-    fontWeight = FontWeight.SemiBold
+    fontWeight = FontWeight.SemiBold,
 )

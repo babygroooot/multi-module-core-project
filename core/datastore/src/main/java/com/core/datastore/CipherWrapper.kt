@@ -17,12 +17,12 @@ import javax.crypto.spec.GCMParameterSpec
 import javax.inject.Inject
 
 class CipherWrapper @Inject constructor(
-    @ApplicationContext context: Context
+    @ApplicationContext context: Context,
 ) {
 
     private val keyAlias = context.packageName
 
-    companion object{
+    companion object {
         private const val IV_SEPARATOR = "]"
     }
 
@@ -64,32 +64,26 @@ class CipherWrapper @Inject constructor(
         return String(decodedData)
     }
 
-    private fun isKeyExists(keyStore : KeyStore): Boolean {
+    private fun isKeyExists(keyStore: KeyStore): Boolean {
         val aliases = keyStore.aliases()
         while (aliases.hasMoreElements()) {
             return (keyAlias == aliases.nextElement())
         }
         return false
     }
-    private fun generateSecretKey(): SecretKey {
-        return keyGenerator.apply {
-            init(
-                KeyGenParameterSpec
-                    .Builder(keyAlias, PURPOSE_ENCRYPT or PURPOSE_DECRYPT)
-                    .setBlockModes(BLOCK_MODE_GCM)
-                    .setEncryptionPaddings(ENCRYPTION_PADDING_NONE)
-                    .build()
-            )
-        }.generateKey()
-    }
+    private fun generateSecretKey(): SecretKey = keyGenerator.apply {
+        init(
+            KeyGenParameterSpec
+                .Builder(keyAlias, PURPOSE_ENCRYPT or PURPOSE_DECRYPT)
+                .setBlockModes(BLOCK_MODE_GCM)
+                .setEncryptionPaddings(ENCRYPTION_PADDING_NONE)
+                .build(),
+        )
+    }.generateKey()
 
-    private fun getSecretKey(): SecretKey{
-
-        return if(isKeyExists(keyStore)){
-            (keyStore.getEntry(keyAlias, null) as KeyStore.SecretKeyEntry).secretKey
-        } else {
-            generateSecretKey()
-        }
-
+    private fun getSecretKey(): SecretKey = if (isKeyExists(keyStore)) {
+        (keyStore.getEntry(keyAlias, null) as KeyStore.SecretKeyEntry).secretKey
+    } else {
+        generateSecretKey()
     }
 }

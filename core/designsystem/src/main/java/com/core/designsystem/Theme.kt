@@ -19,7 +19,7 @@ import androidx.core.view.WindowCompat
 private val DarkColorScheme = darkColorScheme(
     primary = ColorPrimary,
     secondary = Color.White,
-    tertiary = Color.White
+    tertiary = Color.White,
 )
 
 private val LightColorScheme = lightColorScheme(
@@ -35,14 +35,15 @@ private val LightColorScheme = lightColorScheme(
     onTertiary = Color.White,
     onBackground = Color(0xFF1C1B1F),
     onSurface = Color(0xFF1C1B1F),
-*/)
+*/
+)
 
 @Composable
 fun AppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = false,
-    content: @Composable () -> Unit
+    content: @Composable () -> Unit,
 ) {
     val colorScheme = when {
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
@@ -51,6 +52,7 @@ fun AppTheme(
         }
 
         darkTheme -> DarkColorScheme
+
         else -> LightColorScheme
     }
     val view = LocalView.current
@@ -64,6 +66,6 @@ fun AppTheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        content = content
+        content = content,
     )
 }

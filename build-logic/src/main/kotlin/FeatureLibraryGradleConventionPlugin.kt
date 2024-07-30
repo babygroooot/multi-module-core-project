@@ -2,6 +2,7 @@ import com.madskill.mad_skill.configureFlavors
 import com.madskill.mad_skill.util.configureKotlinAndroid
 import com.madskill.mad_skill.util.libs
 import com.android.build.gradle.LibraryExtension
+import com.madskill.mad_skill.DefaultConfig
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
@@ -18,21 +19,13 @@ class FeatureLibraryGradleConventionPlugin: Plugin<Project> {
             }
             extensions.configure<LibraryExtension> {
                 configureKotlinAndroid(this)
-                defaultConfig.consumerProguardFiles("consumer-rules.pro")
                 configureFlavors(this)
-                buildTypes {
-                    release {
-                        isMinifyEnabled = false
-                        proguardFiles (getDefaultProguardFile("proguard-android-optimize.txt"), "consumer-rules.pro")
-                    }
-                    debug {
-                        proguardFiles (getDefaultProguardFile("proguard-android-optimize.txt"), "consumer-rules.pro")
-                    }
-                }
+                defaultConfig.targetSdk = DefaultConfig.TARGET_SDK
                 buildFeatures {
                     viewBinding = true
                     buildConfig = true
                 }
+                resourcePrefix = path.split("""\W""".toRegex()).drop(1).distinct().joinToString(separator = "_").lowercase() + "_"
                 dependencies {
                     add("implementation", project(":core:model"))
                     add("implementation", project(":core:domain"))

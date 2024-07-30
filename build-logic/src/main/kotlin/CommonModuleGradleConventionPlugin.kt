@@ -17,16 +17,6 @@ class CommonModuleGradleConventionPlugin: Plugin<Project> {
             }
             extensions.configure<LibraryExtension> {
                 configureKotlinAndroid(this)
-                defaultConfig.consumerProguardFiles("consumer-rules.pro")
-                buildTypes {
-                    release {
-                        isMinifyEnabled = false
-                        proguardFiles (getDefaultProguardFile("proguard-android-optimize.txt"), "consumer-rules.pro")
-                    }
-                    debug {
-                        proguardFiles (getDefaultProguardFile("proguard-android-optimize.txt"), "consumer-rules.pro")
-                    }
-                }
                 configureFlavors(this)
                 buildFeatures {
                     viewBinding = true

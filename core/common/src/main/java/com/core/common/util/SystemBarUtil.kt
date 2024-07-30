@@ -5,13 +5,13 @@ import androidx.annotation.ColorRes
 import androidx.core.content.ContextCompat
 import androidx.core.view.WindowCompat
 
-fun Activity.setStatusBarColor(@ColorRes color: Int){
+fun Activity.setStatusBarColor(@ColorRes color: Int) {
     window.statusBarColor = ContextCompat.getColor(this, color)
 }
 
-fun Activity.setStatusBarAppearance(isLightAppearance: Boolean){
+fun Activity.setStatusBarAppearance(isLightAppearance: Boolean) {
     WindowCompat.getInsetsController(
         window,
-        window.decorView
+        window.decorView,
     ).isAppearanceLightStatusBars = isLightAppearance
 }

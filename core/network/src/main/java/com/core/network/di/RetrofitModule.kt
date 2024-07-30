@@ -1,6 +1,5 @@
 package com.core.network.di
 
-
 import com.core.datastore.DataStoreManager
 import com.core.network.BuildConfig
 import com.core.network.util.NetworkResultCallAdapterFactory
@@ -26,20 +25,18 @@ import javax.inject.Singleton
 class RetrofitModule {
 
     @Provides
-    fun provideBaseURL(): String {
-        return BuildConfig.BASE_URL
-    }
+    fun provideBaseURL(): String = BuildConfig.BASE_URL
 
     @Provides
-    fun provideLoggingInterceptor(): HttpLoggingInterceptor {
-        return HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
-    }
+    @Singleton
+    fun provideLoggingInterceptor(): HttpLoggingInterceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
 
     @Provides
+    @Singleton
     fun provideOkHttpClient(
         loggingInterceptor: HttpLoggingInterceptor,
         dataStoreManager: DataStoreManager,
-        tokenAuthenticator: TokenAuthenticator
+        tokenAuthenticator: TokenAuthenticator,
     ): OkHttpClient {
         val okHttpClientBuilder = OkHttpClient().newBuilder()
 
@@ -67,6 +64,7 @@ class RetrofitModule {
     }
 
     @Provides
+    @Singleton
     fun provideConverterFactory(): Converter.Factory {
         val contentType = "application/json; charset=UTF-8".toMediaType()
         val json = Json {
@@ -77,9 +75,8 @@ class RetrofitModule {
     }
 
     @Provides
-    fun provideAdapterFactory(): CallAdapter.Factory {
-        return NetworkResultCallAdapterFactory.create()
-    }
+    @Singleton
+    fun provideAdapterFactory(): CallAdapter.Factory = NetworkResultCallAdapterFactory.create()
 
     @Provides
     @Singleton
@@ -87,14 +84,11 @@ class RetrofitModule {
         okHttpClient: OkHttpClient,
         baseUrl: String,
         converterFactory: Converter.Factory,
-        adapterFactory: CallAdapter.Factory
-    ): Retrofit {
-        return Retrofit.Builder()
-            .baseUrl(baseUrl)
-            .client(okHttpClient)
-            .addConverterFactory(converterFactory)
-            .addCallAdapterFactory(adapterFactory)
-            .build()
-    }
-
+        adapterFactory: CallAdapter.Factory,
+    ): Retrofit = Retrofit.Builder()
+        .baseUrl(baseUrl)
+        .client(okHttpClient)
+        .addConverterFactory(converterFactory)
+        .addCallAdapterFactory(adapterFactory)
+        .build()
 }

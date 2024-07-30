@@ -63,5 +63,9 @@ gradlePlugin {
             id = "developmentway.android.application.compose"
             implementationClass = "AndroidApplicationComposeConventionPlugin"
         }
+        register("androidTest") {
+            id = "developmentway.android.test"
+            implementationClass = "AndroidTestConventionPlugin"
+        }
     }
 }

@@ -16,20 +16,10 @@ class NetworkGradleConventionPlugin: Plugin<Project> {
             }
             extensions.configure<LibraryExtension> {
                 configureKotlinAndroid(this)
-                defaultConfig.consumerProguardFiles("consumer-rules.pro")
                 configureFlavors(this) {
                     when (it) {
                         AppFlavor.Dev -> buildConfigField("String","BASE_URL", FlavorConfig.DEV_BASE_URL)
                         AppFlavor.Prod -> buildConfigField("String","BASE_URL", FlavorConfig.PROD_BASE_URL)
-                    }
-                }
-                buildTypes {
-                    release {
-                        isMinifyEnabled = false
-                        proguardFiles (getDefaultProguardFile("proguard-android-optimize.txt"), "consumer-rules.pro")
-                    }
-                    debug {
-                        proguardFiles (getDefaultProguardFile("proguard-android-optimize.txt"), "consumer-rules.pro")
                     }
                 }
                 buildFeatures {

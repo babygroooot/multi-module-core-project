@@ -10,9 +10,9 @@ android {
 
 dependencies {
 
-    testImplementation (libs.junit.test)
-    androidTestImplementation (libs.androidx.test.ext)
-    androidTestImplementation (libs.espresso.core)
+    testImplementation(libs.junit.test)
+    androidTestImplementation(libs.androidx.test.ext)
+    androidTestImplementation(libs.espresso.core)
 
     //Retrofit
     implementation(libs.retrofit.core)
@@ -21,6 +21,6 @@ dependencies {
     implementation(libs.kotlinx.serialization.converter)
     implementation(libs.kotlinx.serialization.json)
 
-    implementation (projects.core.common)
-    implementation (projects.core.datastore)
+    implementation(projects.core.common)
+    implementation(projects.core.datastore)
 }

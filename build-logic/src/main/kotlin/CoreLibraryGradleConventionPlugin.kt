@@ -14,17 +14,7 @@ class CoreLibraryGradleConventionPlugin: Plugin<Project> {
             }
             extensions.configure<LibraryExtension> {
                 configureKotlinAndroid(this)
-                defaultConfig.consumerProguardFiles("consumer-rules.pro")
                 configureFlavors(this)
-                buildTypes {
-                    release {
-                        isMinifyEnabled = false
-                        proguardFiles (getDefaultProguardFile("proguard-android-optimize.txt"), "consumer-rules.pro")
-                    }
-                    debug {
-                        proguardFiles (getDefaultProguardFile("proguard-android-optimize.txt"), "consumer-rules.pro")
-                    }
-                }
                 buildFeatures {
                     buildConfig = true
                 }

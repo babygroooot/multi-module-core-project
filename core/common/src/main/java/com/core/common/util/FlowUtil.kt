@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 fun <T> Fragment.collectLifecycleFlow(
     flow: Flow<T>,
     lifecycleState: Lifecycle.State = Lifecycle.State.STARTED,
-    collect: suspend (T) -> Unit
+    collect: suspend (T) -> Unit,
 ) {
     viewLifecycleOwner.lifecycleScope.launch {
         viewLifecycleOwner.repeatOnLifecycle(lifecycleState) {
@@ -24,7 +24,7 @@ fun <T> Fragment.collectLifecycleFlow(
 fun <T> Fragment.collectLatestLifecycleFlow(
     flow: Flow<T>,
     lifecycleState: Lifecycle.State = Lifecycle.State.STARTED,
-    collect: suspend (T) -> Unit
+    collect: suspend (T) -> Unit,
 ) {
     viewLifecycleOwner.lifecycleScope.launch {
         viewLifecycleOwner.repeatOnLifecycle(lifecycleState) {
@@ -36,7 +36,7 @@ fun <T> Fragment.collectLatestLifecycleFlow(
 fun <T> AppCompatActivity.collectLifecycleFlow(
     flow: Flow<T>,
     lifecycleState: Lifecycle.State = Lifecycle.State.STARTED,
-    collect: suspend (T) -> Unit
+    collect: suspend (T) -> Unit,
 ) {
     lifecycleScope.launch {
         repeatOnLifecycle(lifecycleState) {
@@ -48,7 +48,7 @@ fun <T> AppCompatActivity.collectLifecycleFlow(
 fun <T> AppCompatActivity.collectLatestLifecycleFlow(
     flow: Flow<T>,
     lifecycleState: Lifecycle.State = Lifecycle.State.STARTED,
-    collect: suspend (T) -> Unit
+    collect: suspend (T) -> Unit,
 ) {
     lifecycleScope.launch {
         repeatOnLifecycle(lifecycleState) {

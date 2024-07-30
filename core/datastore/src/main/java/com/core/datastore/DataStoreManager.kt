@@ -15,7 +15,6 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
-import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -25,7 +24,7 @@ private val Context.dataStore by preferencesDataStore(name = "pref_datastore")
 
 class DataStoreManager @Inject constructor(
     @ApplicationContext context: Context,
-    private val cipherWrapper: CipherWrapper
+    private val cipherWrapper: CipherWrapper,
 ) {
     private val dataStore = context.dataStore
     private val json = Json {
@@ -154,10 +153,9 @@ class DataStoreManager @Inject constructor(
         }.run {
             return ""
         }
-
     }
 
-    suspend fun removeToken(){
+    suspend fun removeToken() {
         dataStore.edit {
             it.remove(stringPreferencesKey("Token"))
         }
@@ -170,7 +168,7 @@ class DataStoreManager @Inject constructor(
         }
     }
 
-    suspend fun getRefreshToken(): String?{
+    suspend fun getRefreshToken(): String? {
         val preferences = dataStore.data.first()
         preferences[stringPreferencesKey("RefreshToken")]?.let { encrypt ->
             val decodedString = cipherWrapper.decryptData((encrypt))
@@ -180,7 +178,7 @@ class DataStoreManager @Inject constructor(
         }
     }
 
-    suspend fun removeRefreshToken(){
+    suspend fun removeRefreshToken() {
         dataStore.edit {
             it.remove(stringPreferencesKey("RefreshToken"))
         }
