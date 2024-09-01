@@ -1,4 +1,4 @@
-package com.core.network.util.token_manager
+package com.core.network.util.authenticator
 
 import retrofit2.http.Body
 import retrofit2.http.POST

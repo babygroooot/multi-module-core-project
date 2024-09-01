@@ -13,9 +13,9 @@ object FlavorConfig{
 
 object DefaultConfig{
     const val VERSION_NAME = "1.0"
-    const val COMPILE_SDK = 34
-    const val MIN_SDK = 24
-    const val TARGET_SDK = 34
+    const val COMPILE_SDK = 35
+    const val MIN_SDK = 21
+    const val TARGET_SDK = 35
     const val APPLICATION_ID = "com.madskill.mad_skill"
     const val VERSION_CODE = 1
 }

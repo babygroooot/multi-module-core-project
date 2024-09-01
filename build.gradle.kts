@@ -21,6 +21,7 @@ plugins {
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.compose.compiler) apply false
     alias(libs.plugins.spotless) apply false
+    alias(libs.plugins.room.gradlePlugin) apply false
 }
 subprojects {
     apply<SpotlessPlugin>()

@@ -1,4 +1,4 @@
-package com.core.network.util.token_manager
+package com.core.network.util.authenticator
 
 import kotlinx.serialization.Serializable
 

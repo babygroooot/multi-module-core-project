@@ -1,4 +1,4 @@
-package com.core.network.util.token_manager
+package com.core.network.util.authenticator
 
 import com.core.datastore.DataStoreManager
 import com.core.network.BuildConfig

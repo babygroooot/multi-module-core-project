@@ -3,7 +3,7 @@ package com.core.network.di
 import com.core.datastore.DataStoreManager
 import com.core.network.BuildConfig
 import com.core.network.util.NetworkResultCallAdapterFactory
-import com.core.network.util.token_manager.TokenAuthenticator
+import com.core.network.util.authenticator.TokenAuthenticator
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
