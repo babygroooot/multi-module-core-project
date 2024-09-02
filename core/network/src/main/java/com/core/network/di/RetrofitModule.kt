@@ -10,6 +10,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.Json
+import okhttp3.Call
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -33,12 +34,12 @@ class RetrofitModule {
 
     @Provides
     @Singleton
-    fun provideOkHttpClient(
+    fun okhttpCallFactory(
         loggingInterceptor: HttpLoggingInterceptor,
         dataStoreManager: DataStoreManager,
         tokenAuthenticator: TokenAuthenticator,
-    ): OkHttpClient {
-        val okHttpClientBuilder = OkHttpClient().newBuilder()
+    ): Call.Factory {
+        val okHttpClientBuilder = OkHttpClient.Builder()
 
         okHttpClientBuilder.callTimeout(20, TimeUnit.SECONDS)
         okHttpClientBuilder.connectTimeout(20, TimeUnit.SECONDS)
@@ -81,13 +82,15 @@ class RetrofitModule {
     @Provides
     @Singleton
     fun provideRetrofitClient(
-        okHttpClient: OkHttpClient,
+        okhttpCallFactory: dagger.Lazy<Call.Factory>,
         baseUrl: String,
         converterFactory: Converter.Factory,
         adapterFactory: CallAdapter.Factory,
     ): Retrofit = Retrofit.Builder()
         .baseUrl(baseUrl)
-        .client(okHttpClient)
+        .callFactory {
+            okhttpCallFactory.get().newCall(it)
+        }
         .addConverterFactory(converterFactory)
         .addCallAdapterFactory(adapterFactory)
         .build()
