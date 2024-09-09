@@ -9,13 +9,13 @@ ktx = "1.13.1"
 androidxAppCompat = "1.7.0"
 materialVersion = "1.12.0"
 constraintLayoutVersion = "2.1.4"
-androidxFragment = "1.8.2"
-androidxActivity = "1.9.1"
-lifecycle = "2.8.4"
+androidxFragment = "1.8.3"
+androidxActivity = "1.9.2"
+lifecycle = "2.8.5"
 androidxMetrics = "1.0.0-beta01"
-androidDesugarJdkLibs = "2.1.1"
+androidDesugarJdkLibs = "2.1.2"
 #Navigation Component
-navigation = "2.8.0-rc01"
+navigation = "2.8.0"
 #Room Database
 room = "2.6.1"
 #Test
@@ -33,11 +33,8 @@ androidTools = "31.6.0"
 #DataStore
 dataStore = "1.1.1"
 #Compose
-androidxComposeBom = "2024.08.00"
+androidxComposeBom = "2024.09.00"
 androidxHiltNavigationCompose = "1.2.0"
-material3Beta = "1.3.0-rc01"
-#Spotless
-spotlessVersion = "7.0.0.BETA1"
 
 [libraries]
 #Hilt
@@ -85,11 +82,11 @@ androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", versi
 androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation" }
 androidx-compose-foundation-layout = { group = "androidx.compose.foundation", name = "foundation-layout" }
 androidx-compose-material-iconsExtended = { group = "androidx.compose.material", name = "material-icons-extended" }
-androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3Beta" }
+androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "androidxHiltNavigationCompose" }
 androidx-lifecycle-runtimeCompose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycle" }
 androidx-lifecycle-viewModelCompose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycle" }
-androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation" }
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose" }
 androidx-compose-ui-util = { group = "androidx.compose.ui", name = "ui-util" }
 androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
@@ -106,7 +103,6 @@ kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
-spotless = { id = "com.diffplug.spotless", version.ref = "spotlessVersion" }
 room-gradlePlugin = { id = "androidx.room", version.ref = "room" }
 
 #Plugin defined by this project
