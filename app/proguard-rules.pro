@@ -8,8 +8,6 @@
 -dontwarn org.openjsse.javax.net.ssl.SSLSocket
 -dontwarn org.openjsse.net.ssl.OpenJSSE
 
--keep class com.core.common.util.NetworkResult
-
 # Remove log output from release build
 -assumenosideeffects class android.util.Log {
 public static *** d(...);

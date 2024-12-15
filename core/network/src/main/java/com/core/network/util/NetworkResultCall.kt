@@ -1,6 +1,5 @@
 package com.core.network.util
 
-import com.core.common.util.NetworkResult
 import okhttp3.Request
 import okhttp3.ResponseBody
 import okio.Timeout

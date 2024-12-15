@@ -6,6 +6,9 @@ plugins {
 
 android {
     namespace = "com.core.network"
+    defaultConfig {
+        consumerProguardFiles("consumer-proguard-rules.pro")
+    }
 }
 
 dependencies {
@@ -21,6 +24,5 @@ dependencies {
     implementation(libs.kotlinx.serialization.converter)
     implementation(libs.kotlinx.serialization.json)
 
-    implementation(projects.core.common)
     implementation(projects.core.datastore)
 }

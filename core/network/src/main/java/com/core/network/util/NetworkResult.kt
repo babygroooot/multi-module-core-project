@@ -1,4 +1,4 @@
-package com.core.common.util
+package com.core.network.util
 
 import com.core.common.R
 

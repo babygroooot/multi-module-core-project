@@ -1,6 +1,5 @@
 package com.core.network.util
 
-import com.core.common.util.NetworkResult
 import retrofit2.Call
 import retrofit2.CallAdapter
 import retrofit2.Retrofit
