@@ -1,1 +1,1 @@
--keep class com.core.network.util.NetworkResult
+-keep class com.core.network.network.NetworkResult

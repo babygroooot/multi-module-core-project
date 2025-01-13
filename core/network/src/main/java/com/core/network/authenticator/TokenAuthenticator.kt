@@ -1,4 +1,4 @@
-package com.core.network.util.authenticator
+package com.core.network.authenticator
 
 import com.core.datastore.DataStoreManager
 import com.core.network.BuildConfig
@@ -31,7 +31,7 @@ class TokenAuthenticator @Inject constructor(
                 dataStoreManager.saveToken(it.data.accessToken)
                 dataStoreManager.saveRefreshToken(it.data.refreshToken)
                 response.request.newBuilder()
-                    .header("Authorization", "Bearer ${it.data.accessToken}")
+                    .header(name = "Authorization", value =  "Bearer ${it.data.accessToken}")
                     .build()
             }
         }

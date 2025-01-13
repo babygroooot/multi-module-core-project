@@ -1,4 +1,4 @@
-package com.core.network.util
+package com.core.network.network
 
 import okhttp3.ResponseBody
 import retrofit2.Call

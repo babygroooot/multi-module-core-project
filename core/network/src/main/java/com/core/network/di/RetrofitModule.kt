@@ -2,8 +2,8 @@ package com.core.network.di
 
 import com.core.datastore.DataStoreManager
 import com.core.network.BuildConfig
-import com.core.network.util.NetworkResultCallAdapterFactory
-import com.core.network.util.authenticator.TokenAuthenticator
+import com.core.network.network.NetworkResultCallAdapterFactory
+import com.core.network.authenticator.TokenAuthenticator
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

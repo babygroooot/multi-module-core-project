@@ -1,4 +1,4 @@
-package com.core.network.util
+package com.core.network.network
 
 sealed class NetworkResult<out T : Any, out E : Any> {
     class Success<T : Any>(val data: T) : NetworkResult<T, Nothing>()

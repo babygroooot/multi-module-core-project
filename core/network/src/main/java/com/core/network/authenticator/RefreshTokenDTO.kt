@@ -1,4 +1,4 @@
-package com.core.network.util.authenticator
+package com.core.network.authenticator
 
 import kotlinx.serialization.Serializable
 

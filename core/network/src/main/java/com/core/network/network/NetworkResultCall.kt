@@ -1,4 +1,4 @@
-package com.core.network.util
+package com.core.network.network
 
 import okhttp3.Request
 import okhttp3.ResponseBody
@@ -21,7 +21,11 @@ class NetworkResultCall<T : Any, E : Any>(
                 val code = response.code()
                 val error = response.errorBody()
                 if (response.isSuccessful && body != null) {
-                    callback.onResponse(this@NetworkResultCall, Response.success(NetworkResult.Success(body)))
+                    callback.onResponse(this@NetworkResultCall, Response.success(
+                        NetworkResult.Success(
+                            body
+                        )
+                    ))
                 } else {
                     val errorBody = when {
                         error == null -> null
@@ -34,9 +38,13 @@ class NetworkResultCall<T : Any, E : Any>(
                             null
                         }
                     }
-                    if (errorBody != null) {
-                        callback.onResponse(this@NetworkResultCall, Response.success(NetworkResult.Error(code, response.message(), errorBody)))
-                    }
+                    callback.onResponse(this@NetworkResultCall, Response.success(
+                        NetworkResult.Error(
+                            code,
+                            response.message(),
+                            errorBody
+                        )
+                    ))
                 }
             }
 

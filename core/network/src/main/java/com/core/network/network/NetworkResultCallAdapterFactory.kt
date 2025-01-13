@@ -1,4 +1,4 @@
-package com.core.network.util
+package com.core.network.network
 
 import retrofit2.Call
 import retrofit2.CallAdapter

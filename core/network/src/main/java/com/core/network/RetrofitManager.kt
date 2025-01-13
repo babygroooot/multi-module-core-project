@@ -1,9 +1,9 @@
-package com.core.network.util
+package com.core.network
 
 import retrofit2.Retrofit
 import javax.inject.Inject
 
-class RetrofitUtil @Inject constructor() {
+class RetrofitManager @Inject constructor() {
 
     @Inject
     lateinit var retrofit: Retrofit

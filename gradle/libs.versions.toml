@@ -23,7 +23,7 @@ junit4 = "4.13.2"
 junitExt = "1.2.1"
 espresso = "3.6.1"
 #Kotlin Serialization
-kotlinxSerializationJsonVersion = "1.7.3"
+kotlinxSerializationJsonVersion = "1.8.0"
 kotlinxSerializationConverter = "2.11.0"
 #Gradle Plugin
 androidGradlePlugin = "8.7.3"
